@@ -1,0 +1,9 @@
+	 name : Proflavine in vacuum: Absorption
+	 machine : local
+	 method : TDVP1
+	 dt = 10
+	 tmax = 6970
+	 parameters : psi = [0.09501886492344792; 0.9405530935905491; 0.32608479487076275;;], energy_1 = 0.12408798072882796, energy_2 = 0.12459917009076196, coupling = -6.86427563218691e-5, dipole_moment_1 = 2.8843819410939373, dipole_moment_2 = 0.2913931174285718, temp = 300, chain_length = 150, num_fock = 30, 
+	 observables : 
+	 convparams : 50
+	 options : verbose = false, 

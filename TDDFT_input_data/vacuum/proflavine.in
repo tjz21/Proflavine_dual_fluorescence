@@ -1,0 +1,16 @@
+# basis set: 6-31+G*
+basis           6-31+G*
+# coordinates file
+coordinates     proflavine.xyz
+# molecule charge
+charge          +1
+method          camb3lyp
+run             energy
+threall 1.0e-14
+convthre  1.0e-5
+rpa                     yes
+cisnumstates            2
+cisguessvecs       6
+cismaxiter              50
+end
+

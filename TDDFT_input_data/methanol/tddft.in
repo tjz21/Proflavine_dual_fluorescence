@@ -1,0 +1,19 @@
+# batch tddft job
+# Net charge:     1
+# Multiplicity:   1
+# Excited states: 3
+run             energy
+coordinates     frame.xyz
+pointcharges    ptcharges.xyz
+charge          1
+spinmult        1
+method          camb3lyp
+basis           6-31+gs
+guess           generate
+maxit           200
+cismaxiter      100
+rpa             yes
+cisnumstates    3
+cisguessvecs    6
+cisntos         yes
+end

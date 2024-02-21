@@ -1,0 +1,16 @@
+# basis set: 6-31+G*
+basis           6-31+G*
+# coordinates file
+coordinates     proflavine.xyz
+# molecule charge
+charge          +1
+method          camb3lyp
+run             md
+threall 1.0e-14
+convthre  1.0e-5
+nstep           44000
+timestep        0.5
+thermostat      langevin
+t0      300.0
+end
+

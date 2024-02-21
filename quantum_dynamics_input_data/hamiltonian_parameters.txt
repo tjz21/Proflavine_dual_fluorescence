@@ -1,0 +1,71 @@
+Full set of Hamiltonian parameters usde in the calculations.
+
+# Proflavine in vacuum TDDFT:
+# Diabatic state 1:
+# Average energy (Ha):          0.12408798072882796
+# Average dipole moment (a.u.): 2.8843819410939373
+#
+# Diabatic state 2:
+# Average energy (Ha):          0.13268402096940593
+# Average dipole moment (a.u.): 0.2913931174285718
+#
+# Average couplings (Ha):
+# S1-S2: -6.86427563218691e-05
+#
+# Poflavine in vacuum adjusted energy gaps:
+# EOMCCSD gap:          energy_2 = 0.13857449858042653
+# Reduced gap -0.16 eV: energy_2 = 0.12680406998807117
+# Reduced gap -0.18 eV: energy_2 = 0.12606908388904701
+# Reduced gap -0.20 eV: energy_2 = 0.12533409779002285
+# Reduced gap -0.21 eV: energy_2 = 0.12496660474051077
+# Reduced gap -0.22 eV: energy_2 = 0.12459917009076196
+# Reduced gap -0.23 eV: energy_2 = 0.12423161864148660
+# Reduced gap -0.24 eV: energy_2 = 0.12386412559197452
+# Reduced gap -0.26 eV: energy_2 = 0.12312913949295036
+
+# Proflavine in acetonitrile TDDFT:
+# Diabatic state 1:
+# Average energy (Ha):          0.12416687272958432
+# Average dipole moment (a.u.): 2.8451516626027398
+#
+# Diabatic state 2:
+# Average energy (Ha):          0.13248731768094213
+# Average dipole moment (a.u.): 0.2825963000060403
+#
+# Average couplings (Ha):
+# S1-S2: -0.0003349820957861715
+#
+# Proflavine in acetonitrile adjusted energy gaps:
+# vacuum_shift:                  energy_2 = 0.12442702688985788
+# vacuum_shift+QM_polarization:  energy_2 = 0.12672751651083633
+
+
+# Proflavine in methanol TDDFT: 
+# Diabatic state 1:
+# Average energy (Ha):          0.12339533447004895
+# Average dipole moment (a.u.): 2.8581705597387335
+#
+# Diabatic state 2:
+# Average energy (Ha):          0.1316989586816757
+# Average dipole moment (a.u.): 0.2684908252642203
+#
+# Average couplings (Ha):
+# S1-S2: 0.00013373931617562967
+# 
+# Proflavine in methanol adjusted energy gaps:
+# EOM-CCSD gap: 		 energy_2 = 0.13695215306654962
+# vacuum_shift:                  energy_2 = 0.12361411159240991
+# vacuum_shift+QM_polarization:  energy_2 = 0.12589991836037505
+
+
+# Proflavine in methanol stripped solvent TDDFT with adjusted gap -0.22 eV:
+# Diabatic state 1:
+# Average energy (Ha):          0.12441086614966744
+# Average dipole moment (a.u.): 2.869468531240047
+#
+# Diabatic state 2:
+# Average energy (Ha):          0.12506134199571311
+# Average dipole moment (a.u.): 0.292041108632663
+#
+# Average couplings (Ha):
+# S1-S2: 0.00017828504667116
