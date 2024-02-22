@@ -1,0 +1,19 @@
+50ps LNV in open boundary
+ &cntrl
+  imin     = 0,     ! Minimize: 0 for MD, 1 for minimization 
+  irest    = 0,     ! Restart: 0 to ignore velocities and timestamp in .rst, 1 to read them
+  ntb      = 0,     ! Periodic box: 0 for open boundary, 1 for constant volume, 2 for constant pressure
+  cut      = 999.0, ! Interaction limit: in angstroms
+  ntr      = 0,     ! Restrain atoms specified with `restraintmask': 0 for no restrained atoms, 1 to read `restraintmask'
+  ntc      = 2,     ! SHAKE hydrogen bond constraint: 1 for no constraint (minimization), 2 for hydrogen bond length constraint (MD), 3 for all bonds
+  ntf      = 2,     ! Omit calculating some forces: set it equal to ntc 
+  tempi    = 300.0, ! Initial temperature: in Kelvin
+  temp0    = 300.0, ! Target temperature: in Kelvin
+  ntt      = 3,     ! Temperature algorithm: 0 for constant total energy, 1 for weak coupling, 2 for Andersen, 3 for Langevin, 9-11 for other stuff
+  gamma_ln = 1.0,   ! Collision frequency for ntt=3,9,10: in ps^-1
+  nstlim   = 100000,! Number of MD steps 
+  dt       = 0.0005,! MD timestep: in ps
+  ntpr     = 100,   ! Write MD/minimizer energies frequency: in MD steps
+  ntwx     = 2000,  ! Write MD/minimizer geometry frequency: in MD steps
+  ntwr     = 2000   ! Write MD/minimizer restart frequency: in MD steps
+ /
