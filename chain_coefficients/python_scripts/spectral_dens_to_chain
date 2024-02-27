@@ -24,13 +24,13 @@
 #     which the chain chain coefficients will be written. The file extension
 #     should probably be .hfd5
 #
-# Last updated 20230628 by Kye Hunter
+# Last updated 20240226 by Kye Hunter
 # Based on previous versions by Tim Zuehlsdorff (python),
 # Thibaut Lacroix (julia), Angus Dunnett (MatLab), and the ORTHPOL package by
 # Walter Gautschi, as well as other papers cited per function.
 
 import sys, h5py, math, warnings
-import matplotlib.pyplot
+#import matplotlib.pyplot
 
 def dot(vec1 : list, vec2 : list):
     '''Calculate the dot product of `vec1` and `vec2`.'''
@@ -152,6 +152,14 @@ def thermalize_sd(sd, freq_max = None, freq_min = None, temp = 300):
     return [frequencies, densities]
 
 def check_complex_values(vec, var):
+    '''Check a list of `float`s for `complex`s.
+
+    Propmts the user for what action to take if complex values are found:
+        r: Keep only the real part (discarding the imaginary part),
+        m: Keep only the magnitude (discarding the sign/phase),
+        i: Do nothing, returning the list as is, or
+        e: Exit.
+    '''
     num_complex = sum(issubclass(type(val), complex) for val in vec)
     if num_complex > 0:
         warnings.warn(
@@ -311,6 +319,9 @@ def long_range_coupling(nodes, weights, alphas, betas, coupled_weights):
         #print(f'min |sigmas|: {min([abs(s) for s in sigmas])}')
 
         if max([abs(s) for s in sigmas] + [tiny]) > huge:
+            # This would not really be a problem, but it seems to never happen. 
+            # If it did, the polynomials could just be rescaled similar to what 
+            # is implimented for underflows.
             raise RuntimeError(
                 'Impending overflow! sigmas is huge in long_range_coupling '
                 f'iteration {k}: max = {max([abs(s) for s in sigmas])}'
@@ -457,7 +468,8 @@ def main(
     ]
     # Write output
     print(f'Writing output to {output_file_name}')
-    output_handle = h5py.File(output_file_name, 'w')  # create new hdf5 file in 'write mode'
+    # create new hdf5 file in 'write mode'
+    output_handle = h5py.File(output_file_name, 'w')  
     root_group = output_handle.create_group(f'temp_{temp}')
     root_group.create_dataset('long_range_s1_to_s2', data = s1_long_range)
     root_group.create_dataset('long_range_s2_to_s1', data = s2_long_range)
@@ -499,8 +511,8 @@ def quaddat(SD):
     '''Return a two column function with weights and nodes from a discrete
     sampling of a continuous spectral density.
     '''
-    DM = np.zeros((SD.shape[0] - 1, 2)) # This is just trapezoidal integration,
-    
+    DM = np.zeros((SD.shape[0] - 1, 2)) 
+    # This is just trapezoidal integration
     for i in range(DM.shape[0]):
         DM[i, 0] = (SD[i + 1, 0] + SD[i, 0]) / 2.0
         DM[i, 1] = (SD[i + 1, 1] + SD[i, 1]) * (SD[i + 1, 0] - SD[i, 0]) / 2.0
